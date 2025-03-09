@@ -1,20 +1,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --light-gray: #EDEDED;
+  --primary: #FBD679;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
 
 body {
   color: var(--foreground);
@@ -35,6 +33,19 @@ a {
   text-decoration: none;
 }
 
+button {
+  all: unset;  /* Resets all properties */
+  background: none; /* Removes background */
+  border: none; /* Removes border */
+  padding: 0; /* Removes padding */
+  font: inherit; /* Inherits font from parent */
+  cursor: pointer; /* Ensures the button has a pointer cursor */
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 36px;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
