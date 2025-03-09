@@ -1,4 +1,4 @@
-import { extendedGCD } from "./helperMethods";
+import { extendedGCD } from "./helperMethods.js";
 
 export default class ModularEquation {
   // Represents an equation of the form:
@@ -13,15 +13,20 @@ export default class ModularEquation {
   solve() {
     // We want to reach an equation of the form x = b (mod n)
     // If there's no solution, return null
-    let { d, s, t } = extendedGCD();
-
+    let { d, s, t } = extendedGCD(this.A, this.N);
+    let b = this.B;
     // We know that the equation has a solution <=> d|b
     if (b % d != 0) {
       return null;
     }
 
     // For now, we only need the first solution
-    let x0 = (b * t) / d;
+    let x0 = (b * s) / d;
+
+    x0 = x0 % this.N;
+    if (x0 < 0) {
+      x0 += this.N;
+    }
 
     return x0;
   }

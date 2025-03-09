@@ -1,4 +1,8 @@
 export function extendedGCD(a, b) {
+  if (a === undefined || b === undefined) {
+    throw new Error("Something went wrong!");
+  }
+
   let s = 0,
     old_s = 1;
   let t = 1,
@@ -14,9 +18,8 @@ export function extendedGCD(a, b) {
     [old_s, s] = [s, old_s - quotient * s];
     [old_t, t] = [t, old_t - quotient * t];
   }
-
   // Now, old_r is the gcd, and old_s, old_t are the coefficients
-  return { gcd: old_r, s: old_s, t: old_t };
+  return { d: old_r, s: old_s, t: old_t };
 }
 
 export function gcd(a, b) {

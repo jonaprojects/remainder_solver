@@ -1,5 +1,5 @@
-import ModularEquation from "./ModularEquation";
-import { checkCoprimes } from "./helperMethods";
+import ModularEquation from "./ModularEquation.js";
+import { checkCoprimes } from "./helperMethods.js";
 
 export default class ModularSystem {
   constructor(equations = null) {
@@ -7,6 +7,9 @@ export default class ModularSystem {
     if (this.equations == null) {
       this.equations = [];
     }
+  }
+  add(equation) {
+    this.equations.push(equation);
   }
   solve() {
     // Solve the systems of equations
@@ -18,9 +21,45 @@ export default class ModularSystem {
     }
 
     // Make sure that the moduli are coprime in pairs
-    if (!checkCoprimes()) {
+    if (!this.checkPairCoprimes()) {
       return false; // Can't solve this
     }
+
+    // Now we need to get M1, M2, ... M_N
+    let M_vector = [];
+    let moduloMul = 1;
+    for (let equation of this.equations) {
+      moduloMul *= equation.N;
+    }
+    // M_i = (m1*m2*...*m_n)/m_i
+    for (let equation of this.equations) {
+      M_vector.push(moduloMul / equation.N);
+    }
+
+    // We need to find X_1,...X_n
+    let X_vector = [];
+    for (let i = 0; i < this.equations.length; i++) {
+      let modularEquation = new ModularEquation(
+        M_vector[i] % this.equations[i].N,
+        1,
+        this.equations[i].N
+      );
+
+      let solution = modularEquation.solve();
+      X_vector.push(solution);
+    }
+
+    let sum = 0;
+    for (let i = 0; i < this.equations.length; i++) {
+      sum += M_vector[i] * X_vector[i] * this.equations[i].B;
+    }
+
+    sum %= moduloMul;
+
+    return {
+      solution: sum,
+      mod: moduloMul,
+    };
   }
 
   checkPairCoprimes() {
