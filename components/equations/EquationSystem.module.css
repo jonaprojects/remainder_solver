@@ -1,0 +1,8 @@
+.equationsContainer  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    max-height: 300px;
+    overflow-y: auto
+}

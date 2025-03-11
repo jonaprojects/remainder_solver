@@ -11,6 +11,19 @@ export default class ModularSystem {
   add(equation) {
     this.equations.push(equation);
   }
+
+  insert(index, equation) {
+    this.equations.splice(index, 0, equation);
+  }
+
+  remove(index) {
+    this.equations.splice(index, 1);
+  }
+
+  clear() {
+    this.equations = [];
+  }
+
   solve() {
     // Solve the systems of equations
     // Get a single solution for now

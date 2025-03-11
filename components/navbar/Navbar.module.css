@@ -1,9 +1,13 @@
 .container {
     width: 100%;
-    background-color: var(--light-gray);
-    padding-block: 1.5rem;
+    color: white;
+    font-family: var(--font-inter);
+    font-weight: 400;
+    background-color: rgb(42, 42, 42);
     padding-inline: 4rem;
-    font-family: var(--font-libre-baskerville);
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links {
@@ -12,36 +16,69 @@
     justify-content: center;
     align-items: center;
     font-size: 1rem;
-    gap: 2rem;
 }
 
+.nav-link {
+    height: 100%;
+    padding-block: 1.5rem;
+    min-width: 5rem;
+    padding-inline: 0.5rem;
+    text-align: center;
+}
+
+.nav-link:hover{
+    background: #FFD700;
+    color: black;
+}
 .nav-items {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 .logo { 
     position: absolute;
-    left: 1rem;
+    left: 4rem;
+    height: 2rem;
+    top: 1rem;
+
 }
 
-.right-wing {
+.github-buttons {
+    position: absolute;
+    right: 4rem;
+}
+
+.menu-button { 
+    display: none;
     position: absolute;
     right: 1rem;
+    top: 1rem;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 992px) {
     .nav-links {
-        font-size: 11.5px;
-        gap: 0.5rem;
+        font-size: 0.75em;
     }
     .logo {
-        width: 32px;
-        height: 32px;
+        left: 1rem;
     }
-    .container {
-        padding-inline: 0.5rem;
-        padding-block: 0.75rem;
+    .github-buttons {
+        right: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .github-buttons {
+        display: none;
+    }   
+    .nav-links {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
     }
 }

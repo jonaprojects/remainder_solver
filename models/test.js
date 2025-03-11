@@ -1,5 +1,5 @@
-import ModularEquation from "./ModularEquation";
-import ModularSystem from "./ModularSystem";
+import ModularEquation from "./ModularEquation.js";
+import ModularSystem from "./ModularSystem.js";
 
 function testEquation() {
   let myEquation = new ModularEquation(35, 1, 4);
@@ -16,3 +16,5 @@ function testSystem() {
   let { solution, mod } = system.solve();
   console.log(`The solution is x = ${solution} (mod ${mod})`);
 }
+
+testSystem();

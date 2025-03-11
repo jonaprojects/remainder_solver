@@ -3,6 +3,7 @@
   --foreground: #171717;
   --light-gray: #EDEDED;
   --primary: #FBD679;
+  
 }
 
 
@@ -12,6 +13,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
 
 
 body {
