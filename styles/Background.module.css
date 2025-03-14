@@ -3,6 +3,9 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    margin-top: 2rem;
+    font-size: 18px;
+    font-family: var(--font-lora);
 }
 
 .contentContainer {
@@ -12,5 +15,22 @@
 .par {
     line-height: 1.5;
     font-size: 18px;
-    margin-bottom: 0.5rem;
+    margin-block: 1rem;
+}
+
+.h1 { 
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.h2 { 
+    margin-block-end: 0.75rem;
+    margin-block-start: 2rem;
+}
+.italic { 
+    font-style: italic;
+}
+
+.table { 
+    margin-block: 1.5rem;
 }
