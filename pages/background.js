@@ -10,6 +10,7 @@ import ArticleImage from "@/components/images/ArticleImage";
 import H1 from "@/components/typography/Headers/H1";
 import H2 from "@/components/typography/Headers/H2";
 import Section from "@/components/section/Section";
+import PlanetsTable from "@/components/table/PlanetsTable";
 
 export default function Background() {
   const config = {
@@ -180,28 +181,7 @@ export default function Background() {
                 revolutions, the Sun, Moon, Mars, etc., have moved for the
                 following number of days:
               </p>
-              <table className={classes.table}>
-                <thead>
-                  <tr>
-                    <th>Sun</th>
-                    <th>Moon</th>
-                    <th>Mars</th>
-                    <th>Mercury</th>
-                    <th>Jupiter</th>
-                    <th>Saturn</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1000</td>
-                    <td>41</td>
-                    <td>315</td>
-                    <td>1000</td>
-                    <td>1000</td>
-                    <td>1000</td>
-                  </tr>
-                </tbody>
-              </table>
+              <PlanetsTable />
               <p className={classes.par}>
                 So the problem can be outlined in the following manner: Given
                 that the Sun completes 3 revolutions in 1096 days, the Moon 5
@@ -345,8 +325,18 @@ export default function Background() {
               </p>
               <MathJax>
                 {`$$
-          0 \\leq x < N \\quad \\text{and} \\quad x \\equiv a_i \\pmod{n_i} \\text{ for each } i = 1, 2, \\dots, k.
-          $$`}
+  0 \\leq x < N
+  $$`}
+              </MathJax>
+              <MathJax>
+                {`$$
+  x \\equiv a_i \\pmod{n_i}
+  $$`}
+              </MathJax>
+              <MathJax>
+                {`$$
+  \\forall i \\in \\{1, 2, \\dots, k\\}
+  $$`}
               </MathJax>
             </div>
             <H1>Proof</H1>
