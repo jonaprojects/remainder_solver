@@ -675,6 +675,160 @@ export default function Background() {
                 from the uniqueness that is ensured by the CRT, and the modulus
                 operation.
               </p>
+              <h3>Theorem 1</h3>
+              <p className={classes.par}>
+                Let <MathJax inline>{"$x, y \\in \\mathbb{Z}_{pq}$"}</MathJax>,
+                corresponding to
+                <MathJax inline>
+                  {"$(a, b), (c, d) \\in \\mathbb{Z}_p \\times \\mathbb{Z}_q$"}
+                </MathJax>
+              </p>
+              then <MathJax inline>{"$x+y$"}</MathJax> corresponds to
+              <MathJax inline>{"$(a+c, b+d)$"}</MathJax>, and
+              <MathJax inline>{"$xy$"}</MathJax> corresponds to
+              <MathJax inline>{"$(ac, bd)$"}</MathJax>
+              <h3>Proof</h3>
+              <p className={classes.par}>
+                <MathJax>
+                  {
+                    "$$ \\varphi(x+y) = \\varphi(\\varphi^{-1}(a,b)+\\varphi^{-1}(c,d))$$"
+                  }
+                </MathJax>
+                From modular arithmetic, we know that applying the modulus
+                operator after an addition or element wise is equivalent. This
+                principle applies to scalar, but can also be extended to vector
+                addition, and thus
+                <MathJax>
+                  {
+                    "$$ \\varphi^{-1}(a,b) + \\varphi^{-1}(c,d) = \\varphi^{-1}(a+c,b+d) $$"
+                  }
+                </MathJax>
+                And hence we get that
+                <MathJax>
+                  {"$$\\varphi(x+y) = \\varphi(\\varphi^{-1}(a+c, b+d))$$"}
+                  {"$$ = (a+c, b+d)$$"}
+                </MathJax>
+              </p>
+              <p className={classes.par}>
+                In a similar fashion, we can easily see that
+                <MathJax>
+                  {"$$xy \\pmod{p} = ac \\pmod{p} $$"}
+                  {"$$xy \\pmod{q} = bd \\pmod{q} $$"}
+                </MathJax>
+                And thus <MathJax inline>{"$xy$"}</MathJax> can be represented
+                by
+                <MathJax inline>{"$(ac, bd)$"}</MathJax>.
+              </p>
+              <p className={classes.par}>
+                Now, we could utilize our result to handle arithmetic
+                operations, as was aforementioned earlier. For example, let us
+                observe the following expression
+                <MathJax>{"$$ 22 \\cdot 18 \\pmod{35} $$"}</MathJax>
+              </p>
+              <p className={classes.par}>
+                By the previous theorems, we could break it down to several,
+                easier calculations in
+                <MathJax inline>{"$\\mathbb{Z}_5$"}</MathJax> and{" "}
+                <MathJax inline>{"$\\mathbb{Z}_7$"}</MathJax>
+              </p>
+              <p className={classes.par}>
+                We know that
+                <MathJax>
+                  {`\\[
+\\begin{cases}
+22 \\equiv 2 \\pmod{5} \\\\
+22 \\equiv 1 \\pmod{7}
+\\end{cases}
+\\]`}
+                </MathJax>
+                so 22 can be represented as
+                <MathJax inline>
+                  {"$(2, 1) \\in \\mathbb{Z}_p \\times \\mathbb{Z}_q$"}
+                </MathJax>
+                . In a similar fashion, we can also represent 18 as
+                <MathJax inline>{"$(3, 4)$"}</MathJax>
+                And from the theorem we proved earlier, the result of their
+                multiplication will be
+                <MathJax>
+                  {"$$(2 \\cdot 3, 1 \\cdot 4) \\equiv (1, 4)$$"}
+                </MathJax>
+              </p>
+              <p className={classes.par}>
+                Now to obtain our result in{" "}
+                <MathJax inline>{"$\\mathbb{Z}_{pq}$"}</MathJax>, we simply
+                apply the CRT to get
+                <MathJax inline>{"$\\varphi^{-1}(1,4)$"}</MathJax>, which yields
+                the result <MathJax inline>{"$11 \\pmod{35}$"}</MathJax>
+                One could of course verify the validity of these calculations by
+                himself, by multiplying the two numbers, and only then applying
+                the modulus operator.
+              </p>
+              <h3>Generalization</h3>
+              <p className={classes.par}>
+                In the previous example, we were able to factorize 35 into 2
+                coprime factors.This allowed us to utilize the conclusions from
+                the Chinese Remainder Theorem. Let us generalize this process
+                for all positive integers.
+              </p>
+              <p className={classes.par}>
+                The Fundamental Theorem Of Arithmetic ensures that we would
+                always be able to do so. The theorem suggests that every
+                positive integer.
+                <MathJax inline>{"$x$"}</MathJax> can be uniquely represented in
+                the following way:
+                <MathJax>
+                  {`\\[
+n = \\prod_{i=1}^{n} p_i^{k_i}
+\\]`}
+                </MathJax>
+                where <MathJax inline>{"$p_i$"}</MathJax>
+                are primes, and <MathJax inline>{"$k_i$"}</MathJax>
+                are the number of times these primes appear in the
+                factorization.
+              </p>
+              <p className={classes.par}>
+                For each{" "}
+                <MathJax inline>{"$i, j \\in \\{1, \\dots, n\\}$"}</MathJax>{" "}
+                such that
+                <MathJax inline>{"$i \\ne j$"}</MathJax>, it holds that{" "}
+                <MathJax inline>
+                  {"$\\gcd(p_i^{k_i} \\cdot p_j^{k_j}) = 1$"}
+                </MathJax>
+              </p>
+              <p className={classes.par}>
+                In addition, We proved earlier for each
+                <MathJax inline>{"$p, q$"}</MathJax> which are coprime and
+                greater than 1 that{" "}
+                <MathJax>
+                  {`$$
+    \\mathbb{Z}_{pq} \\cong \\mathbb{Z}_p \\times \\mathbb{Z}_q
+  $$`}
+                </MathJax>
+                It can be generalized to the following statement:
+                <MathJax>
+                  {`$$
+    \\mathbb{Z}_{p_1 p_2 \\dots p_n} \\cong \\mathbb{Z}_{p_1} \\times \\mathbb{Z}_{p_2} \\times \\dots \\times \\mathbb{Z}_{p_n}
+  $$`}
+                </MathJax>
+                when{" "}
+                <MathJax inline>
+                  {"$p_1, p_2, \\dots p_n \\in \\mathbb{N}$"} are greater than 1
+                  and are pairwise coprime.
+                </MathJax>
+                Therefore, in order to solve a calculation of the form
+                <MathJax>{"$$ a \\cdot b \\pmod{n} $$"}</MathJax>
+                where <MathJax inline>
+                  {"$ a, b, n \\in \\mathbb{N} $"}
+                </MathJax>{" "}
+                are greater than 1, it is always possible to factorize{" "}
+                <MathJax inline>{"$n$"}</MathJax> and do the calculations for
+                every <MathJax inline>{"$\\mathbb{Z}_{p_i}$"}</MathJax>{" "}
+                separately.
+              </p>
+              <p>
+                For example, let us observe the following exercise:
+                <MathJax>{"$$ 42 \\cdot 34 \\pmod{30} $$"}</MathJax>
+              </p>
             </Section>
           </div>
         </main>

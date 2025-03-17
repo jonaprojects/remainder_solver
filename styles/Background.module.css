@@ -24,3 +24,9 @@
     font-style: italic;
 }
 
+
+@media screen and (max-width: 576px) {
+    .container { 
+        padding-inline: 5%;
+    }
+}
