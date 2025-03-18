@@ -80,9 +80,9 @@ export default function Navbar() {
               </a>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <a href="/background" className={classes["menu-link"]}>
+              <Link href="/background" className={classes["menu-link"]}>
                 Background
-              </a>
+              </Link>
             </MenuItem>
           </Menu>
         </div>
