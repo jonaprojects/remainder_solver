@@ -8,8 +8,10 @@ export default function Header(props) {
         backgroundImage: `url('${props.imageUrl}')`,
       }}
     >
-      <h1 className={classes.title}>{props.title}</h1>
-      <p className={classes.par}>{props.subtitle}</p>
+      <div>
+        <h1 className={classes.title}>{props.title}</h1>
+        <p className={classes.par}>{props.subtitle}</p>
+      </div>
     </div>
   );
 }

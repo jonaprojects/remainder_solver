@@ -3,6 +3,8 @@
 import { useState } from "react";
 import PrimaryButton from "../buttons/PrimaryButton";
 import classes from "./Navbar.module.css";
+import Link from "next/link";
+
 import {
   AppBar,
   Toolbar,
@@ -32,13 +34,13 @@ export default function Navbar() {
         <img src="logo.png" className={classes.logo} alt="logo" />
         <ul className={classes["nav-links"]}>
           <li className={classes["nav-link"]}>
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
           </li>
           <li className={classes["nav-link"]}>
-            <a href="/">About</a>
+            <Link href="/">About</Link>
           </li>
           <li className={classes["nav-link"]}>
-            <a href="/">Background</a>
+            <Link href="/background">Background</Link>
           </li>
         </ul>
         <div className={classes["github-buttons"]}>
@@ -68,13 +70,19 @@ export default function Navbar() {
           </IconButton>
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
             <MenuItem onClick={handleClose}>
-              <a href="/" className={classes["menu-link"]}>Home</a>
+              <a href="/" className={classes["menu-link"]}>
+                Home
+              </a>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <a href="/" className={classes["menu-link"]}>About</a>
+              <a href="/" className={classes["menu-link"]}>
+                About
+              </a>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <a href="/" className={classes["menu-link"]}>Background</a>
+              <a href="/background" className={classes["menu-link"]}>
+                Background
+              </a>
             </MenuItem>
           </Menu>
         </div>
