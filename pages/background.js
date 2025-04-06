@@ -285,7 +285,7 @@ export default function Background() {
                 Lagrange, Euler and Fermat, and managed to prove some of the
                 most important theorems in Number Theory today.
               </p>
-              <p>
+              <p className={classes.par}>
                 For instance, he proved that any integer greater than 1 can be
                 expressed as a unique multiplication of its prime factors. Due
                 to its significance, it is often referred to as &quot;The
@@ -520,6 +520,80 @@ export default function Background() {
               <MathJax inline>{"$y$"}</MathJax> for the system in modulo
               <MathJax inline>{"$n_1 \\cdot n_2 \\cdots n_m$"}</MathJax>
             </p>
+            <H1>Solving a single equation</H1>
+            <p className={classes.par}>
+              While the Chinese Remainder Theorem helps us deal with systems of
+              equations, it is also essential to have the appropriate tools to
+              solve a single congruence equation. In fact, we need to solve such
+              equations in order to solve the entire system with the theorem, so
+              this will definitely be handy.
+            </p>
+            <H2>Theorem</H2>
+            Let us observe the equation
+            <MathJax>{"$$ ax \\equiv b \\pmod{n}$$"}</MathJax>
+            such that <MathJax inline>
+              {"$n \\in \\mathbb{N}, n>1$"}
+            </MathJax>{" "}
+            and
+            <MathJax inline>{"$a \\in \\mathbb{Z}$"}</MathJax>. And let{" "}
+            <MathJax inline>{"$q, t \\in \\mathbb{Z}$"}</MathJax>, such that
+            <MathJax>{"$$ d = gcd(a, n) = aq + nt $$"}</MathJax>
+            <p className={classes.par}>
+              We can always represent the greatest common divisor of a pair of
+              numbers this way, as promised from the Euclidean Algorithm.
+            </p>
+            <p className={classes.par}>
+              Then if <MathJax inline>{"$d \\mid b $"}</MathJax> then the
+              equation has <MathJax inline>{"$d$"}</MathJax> solutions in{" "}
+              {"$\\mathbb{Z}_n$"}:
+              <MathJax>{"$$ x_k = x_0 + \\frac{kn}{d} $$"}</MathJax>
+              for every <MathJax inline>{"$0 \\le k \\le d-1$"}</MathJax>.
+            </p>
+            <H1>Algorithm</H1>
+            <p className={classes.par}>
+              After proving the theorem, let us describe the general algorithm
+              for systems of congruences. Let us observe the general case:
+            </p>
+            <MathJax>
+              {`$$
+          \\begin{cases}
+          x \\equiv a_1 \\pmod{m_1} \\\\
+          x \\equiv a_2 \\pmod{m_2} \\\\
+          \\vdots \\\\
+          x \\equiv a_k \\pmod{m_k}
+          \\end{cases}
+          $$`}
+            </MathJax>
+            <ol>
+              <li>
+                Make sure that the moduli are pairwise coprime, and that the
+                coefficients of <MathJax inline>{"$x$"}</MathJax> are{" "}
+                <MathJax inline>{"$1$"}</MathJax>.
+              </li>
+              <li>
+                Let us define
+                <MathJax>
+                  {
+                    "$$M_i = \\frac{m_1 \\cdot m_2 \\cdot \\dots \\cdot m_k }{m_i}$$"
+                  }
+                </MathJax>
+                for each <MathJax inline>{"$i=1 \\dots k$"}</MathJax>
+              </li>
+              <li>
+                Let <MathJax inline>{"$X_i$"}</MathJax> be the solution of the
+                equation
+                <MathJax>{"$$ M_iX_i = 1 \\pmod{m_i} $$"}</MathJax>
+              </li>
+              <li>
+                The solution to the system <MathJax inline>{"$X$"}</MathJax>
+                is defined as follows:
+                <MathJax>
+                  {
+                    "$$ X = \\sum_{i=1}^{k} a_i M_i X_i \\pmod{\\prod_{i=1}^{k} m_i} $$"
+                  }
+                </MathJax>
+              </li>
+            </ol>
             <H1>Applications</H1>
             <Section>
               <H2>Optimization of modular arithmetic</H2>
@@ -825,9 +899,75 @@ n = \\prod_{i=1}^{n} p_i^{k_i}
                 every <MathJax inline>{"$\\mathbb{Z}_{p_i}$"}</MathJax>{" "}
                 separately.
               </p>
-              <p>
+              <p className={classes.par}>
                 For example, let us observe the following exercise:
-                <MathJax>{"$$ 42 \\cdot 34 \\pmod{30} $$"}</MathJax>
+                <MathJax>{"$$ 42 \\cdot 34 \\pmod{24} $$"}</MathJax>
+              </p>
+              <p className={classes.par}>
+                First, let us factorize <MathJax inline>{"$24$"}</MathJax> into
+                prime factors. As mentioned earlier, this is guaranteed from the
+                Fundamental Theorem of Arithmetic.
+              </p>
+              <MathJax>
+                {"$$ 24 = 2 \\cdot 2 \\cdot 2 \\cdot 3 = 8 \\cdot 3 $$ "}
+              </MathJax>
+              <p className={classes.par}>
+                It is easy to see that <MathJax inline>{"$8$"}</MathJax> and{" "}
+                <MathJax inline>{"$3$"}</MathJax> are coprime. In fact, every
+                <MathJax inline>{"$p^k,q^m \\in \\mathbb{N}$"}</MathJax> are
+                coprime, where
+                <MathJax inline>{"$p \\ne q$"}</MathJax> are primes, and
+                <MathJax inline>{"$ k,m \\in \\mathbb{N} $"}</MathJax>.
+              </p>
+              <p className={classes.par}>
+                It is easy to see that
+                <MathJax>{"$$42 \\equiv 0 \\pmod{3}$$"}</MathJax>
+                <MathJax>{"$$42 \\equiv 2 \\pmod{8}$$"}</MathJax>
+              </p>
+              And hence we can represent <MathJax inline>{"$42$"}</MathJax> as{" "}
+              <MathJax inline>
+                {"$(0,2) \\in \\mathbb{Z}_3 \\times \\mathbb{Z}_8 $"}
+              </MathJax>
+              <p className={classes.par}>
+                In a similar manner, we can say that
+                <MathJax>{"$$34 \\equiv 1 \\pmod{3}$$"}</MathJax>
+                <MathJax>{"$$34 \\equiv 2 \\pmod{8}$$"}</MathJax>
+                And hence we can represent <MathJax inline>
+                  {"$42$"}
+                </MathJax> as{" "}
+                <MathJax inline>
+                  {"$(1,2) \\in \\mathbb{Z}_3 \\times \\mathbb{Z}_8 $"}{" "}
+                </MathJax>
+              </p>
+              <p>
+                We can now perform element-wise multiplication with respect to
+                the moduli on the vectors we have, as we have seen earlier.
+              </p>
+              <MathJax>
+                {"$$ (0,2)(1,2) = (0\\cdot 1, 2 \\cdot 2) = (0,4)$$"}
+              </MathJax>
+              <p className={classes.par}>
+                To get the solution we will then solve the following system of
+                equations via the Chinese Remainder Theorem:
+                <MathJax>
+                  {`$$
+          \\begin{cases}
+          x \\equiv 0 \\pmod{3} \\\\
+          x \\equiv 4 \\pmod{8} \\\\
+          \\end{cases}
+          $$`}
+                </MathJax>
+                The solution to this system is{" "}
+                <MathJax inline>{"$12$"}</MathJax>, which is also the result of
+                our computation.
+              </p>
+              <p className={classes.par}>
+                We can also verify this result by doing the calculation
+                explicitly on modulo 24.
+                <MathJax>
+                  {"$$ 42 \\cdot 34 \\pmod{24} = 1428 \\pmod{24} $$"}
+                </MathJax>
+                <MathJax>{"$$1428 \\pmod{24} = 12 \\pmod{24} $$"}</MathJax>
               </p>
             </Section>
           </div>

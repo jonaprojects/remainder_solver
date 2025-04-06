@@ -4,7 +4,8 @@
     font-family: var(--font-inter);
     font-weight: 400;
     background-color: rgb(42, 42, 42);
-    padding: 0 4rem;
+    padding-inline-start: 4rem;
+    padding-inline-end: 3rem;
     min-height: 4rem;
     display: flex;
     align-items: center;
@@ -38,8 +39,7 @@
 }
 
 .nav-link:hover {
-    background: #FFD700;
-    color: black;
+    
 }
 
 .github-buttons {
@@ -52,7 +52,7 @@
     display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
     .github-buttons {
         display: none;
     }
@@ -64,4 +64,9 @@
     .menu-button {
         display: block;
     }
+    .container {
+        padding-inline: 1rem;
+    }
 }
+
+

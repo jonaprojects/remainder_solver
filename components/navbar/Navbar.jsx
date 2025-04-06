@@ -30,15 +30,15 @@ export default function Navbar() {
           <Link href="/">Home</Link>
         </li>
         <li className={classes["nav-link"]}>
-          <Link href="/">About</Link>
+          <Link href="/background">Background</Link>
         </li>
         <li className={classes["nav-link"]}>
-          <Link href="/background">Background</Link>
+          <Link href="/examples">Examples</Link>
         </li>
       </ul>
 
       {/* GitHub Buttons */}
-      <div className={classes['github-buttons']}>
+      <div className={classes["github-buttons"]}>
         <GitHubButton
           href="https://github.com/buttons"
           data-size="large"
@@ -57,7 +57,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu Button */}
-      <div className={classes['menu-button']}>
+      <div className={classes["menu-button"]}>
         <IconButton color="inherit" aria-label="menu" onClick={handleClick}>
           <MenuIcon />
         </IconButton>
@@ -68,13 +68,13 @@ export default function Navbar() {
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Link href="/" className={classes["menu-link"]}>
-              About
+            <Link href="/background" className={classes["menu-link"]}>
+              Background
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Link href="/background" className={classes["menu-link"]}>
-              Background
+            <Link href="/examples" className={classes["menu-link"]}>
+              Examples
             </Link>
           </MenuItem>
         </Menu>
