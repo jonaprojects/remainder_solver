@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import Navbar from "@/components/navbar/Navbar";
 import classes from "../styles/Home.module.css";
@@ -8,10 +8,25 @@ import PrimaryButton from "@/components/buttons/PrimaryButton";
 
 export default function Home() {
   const systemRef = useRef();
+  const [feedback, setFeedback] = useState("");
 
   const handleSolve = () => {
-    const res = systemRef.current.solve();
-    console.log(`Solution: ${res.solution} mod ${res.mod}`);
+    let res;
+    try {
+      res = systemRef.current.solve();
+    } catch (e) {
+      setFeedback(
+        "Invalid input or system format. Please check your equations."
+      );
+      return;
+    }
+    if (!res) {
+      setFeedback(
+        "System could not be solved. Ensure all moduli are coprime and equations are valid."
+      );
+    } else {
+      setFeedback(`Solution: x ≡ ${res.solution} (mod ${res.mod})`);
+    }
   };
   return (
     <div className={classes.container}>
@@ -38,9 +53,17 @@ export default function Home() {
           >
             <EquationSystem ref={systemRef} />
           </div>
-          <PrimaryButton onClick={handleSolve}>
-           Solve
-          </PrimaryButton>
+          <PrimaryButton onClick={handleSolve}>Solve</PrimaryButton>
+          {feedback && (
+            <div
+              style={{
+                marginTop: "1rem",
+                color: feedback.startsWith("Solution") ? "green" : "red",
+              }}
+            >
+              {feedback}
+            </div>
+          )}
         </div>
       </main>
     </div>

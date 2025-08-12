@@ -121,7 +121,7 @@ export default function Background() {
               </p>
               <p className={classes.par}>
                 A more general algorithm for solving this problem came from the
-                ancient Indian mathematician Aryabhata in the 6th century. Let{" "}
+                ancient Indian mathematician Aryabhata in the 6th century.{" "}
                 <MathJax inline>{"$ x, y $"}</MathJax> be positive integers, and{" "}
                 <MathJax inline>{"$ a, b, c $"}</MathJax> integers, such that{" "}
                 <MathJax inline>{"$a$"}</MathJax> and{" "}
@@ -137,13 +137,14 @@ export default function Background() {
                 is referred to as{" "}
                 <span className={classes.italic}>Kuttaka</span> by Indian
                 mathematicians. According to legend, mathematician Aryabhata was
-                tasked with finding the integer
+                tasked with finding the integer{" "}
                 <MathJax inline>{"$N$"}</MathJax> such that when divided by an
-                integer <MathJax inline>{"$a$"}</MathJax>, it leaves a remainder
-                <MathJax inline>{"$r_1$"}</MathJax>, and when divided by an
-                integer
-                <MathJax inline>{"$b$"}</MathJax>, it leaves a remainder
-                <MathJax inline>{"$r_2$"}</MathJax>.
+                integer <MathJax inline>{"$a$"}</MathJax> , it leaves a
+                remainder
+                <MathJax inline>{"$r_1$"}</MathJax> , and when divided by an
+                integer <MathJax inline>{"$b$"}</MathJax> , it leaves a
+                remainder
+                <MathJax inline>{"$r_2$"}</MathJax> .
               </p>
               <p className={classes.par}>
                 We can formalize this in the following way:
@@ -298,11 +299,11 @@ export default function Background() {
                 Let <MathJax inline>{"$n_1, n_2, \\dots, n_k$"}</MathJax> be
                 pairwise coprime positive integers, meaning that{" "}
                 <MathJax inline>{"$\\gcd(n_i, n_j) = 1$"}</MathJax> for all{" "}
-                <MathJax inline>{"$i \\neq j$"}</MathJax>.
+                <MathJax inline>{"$i \\neq j$"}</MathJax> .
               </p>
               <p>
                 For any given integers{" "}
-                <MathJax inline>{"$a_1, a_2, \\dots, a_k$"}</MathJax>, the
+                <MathJax inline>{"$a_1, a_2, \\dots, a_k$"}</MathJax> , the
                 system of congruences:
               </p>
               <MathJax>
@@ -317,7 +318,7 @@ export default function Background() {
               </MathJax>
               <p>
                 has a unique solution modulo{" "}
-                <MathJax inline>{"$N = n_1 n_2 \\dots n_k$"}</MathJax>.
+                <MathJax inline>{"$N = n_1 n_2 \\dots n_k$"}</MathJax> .
               </p>
               <p>
                 That is, there exists a unique integer{" "}
@@ -347,20 +348,20 @@ export default function Background() {
             <H2>Lemma 1</H2>
             <p className={classes.par}>
               Let <MathJax inline>{"$n$"}</MathJax> be a positive integer, and
-              consider the ring of integers modulo
-              <MathJax inline>{"$n$"}</MathJax>, denoted{" "}
-              <MathJax inline>{"$\\mathbb{Z}_n$"}</MathJax>. An element{" "}
+              consider the ring of integers modulo{" "}
+              <MathJax inline>{"$n$"}</MathJax> , denoted{" "}
+              <MathJax inline>{"$\\mathbb{Z}_n$"}</MathJax> . An element{" "}
               <MathJax inline>{"$a \\in \\mathbb{Z}_n$"}</MathJax> has a
               multiplicative inverse if and only if{" "}
-              <MathJax inline>{"$\\gcd(a, n) = 1$"}</MathJax>.
+              <MathJax inline>{"$\\gcd(a, n) = 1$"}</MathJax> .
             </p>
             <H2>Lemma 2</H2>
             <p className={classes.par}>
               Let <MathJax inline>{"$p, q, n \\in \\mathbb{Z}$"}</MathJax> such
               that <MathJax inline>{"$\\gcd(p, q) = 1$"}</MathJax> . If{" "}
               <MathJax inline>{"$p \\mid n$"}</MathJax> and
-              <MathJax inline>{"$q \\mid n$"}</MathJax>, then{" "}
-              <MathJax inline>{"$pq \\mid n$"}</MathJax>.
+              <MathJax inline>{"$q \\mid n$"}</MathJax> , then{" "}
+              <MathJax inline>{"$pq \\mid n$"}</MathJax> .
             </p>
             <p className={classes.par}>
               That is, if <MathJax inline>{"$n$"}</MathJax> divides both{" "}
@@ -370,7 +371,7 @@ export default function Background() {
             </p>
             <H2>Proof for systems of 2 equations</H2>
             <p className={classes.par}>
-              Theorem: Let <MathJax inline>{"$p$"} </MathJax> and
+              Theorem: Let <MathJax inline>{"$p$"}</MathJax> and
               <MathJax inline>{"$q$"}</MathJax> be coprime. Then the following
               system
             </p>
@@ -383,22 +384,22 @@ export default function Background() {
         \\]`}
             </MathJax>
             <p className={classes.par}>
-              has a unique solution in modulo <MathJax inline>{"$pq$"}</MathJax>
+              has a unique solution in modulo <MathJax inline>{"$pq$"}</MathJax>{" "}
               .
             </p>
             <p className={classes.par}>
               <strong>Proof:</strong>
-              Let <MathJax inline>{"$p_1 = p^{-1} (mod q)$"}</MathJax>
-              and <MathJax inline>{"$q_1 = q^{-1} (mod p)$"}</MathJax>
-              Their existence is guaranteed from Lemma 1 presented, as
+              Let <MathJax inline>{"$p_1 = p^{-1} (mod q)$"}</MathJax> and{" "}
+              <MathJax inline>{"$q_1 = q^{-1} (mod p)$"}</MathJax> Their
+              existence is guaranteed from Lemma 1 presented, as
               <MathJax inline>{"$p$"}</MathJax> and{" "}
               <MathJax inline>{"$q$"}</MathJax> are coprime.
             </p>
             <p className={classes.par}>
               Let <MathJax inline>{"$y$"}</MathJax> be an integer such that
               <MathJax>{"\\[ y = aqq_1 + bpp_1 \\pmod{pq} \\]"}</MathJax>
-              We can see that <MathJax inline>{"$y$"}</MathJax>
-              indeed satisfies both equations.
+              We can see that <MathJax inline>{"$y$"}</MathJax> indeed satisfies
+              both equations.
             </p>
             <MathJax>
               {`\\[
@@ -410,12 +411,12 @@ export default function Background() {
         y = b p p_1 \\equiv b \\pmod{q}
         \\]`}
             </MathJax>
-            Since <MathJax>{"\\[ qq_1 = 1 \\pmod{p} \\]"}</MathJax>
-            <MathJax>{"\\[ pp_1 = 1 \\pmod{q} \\]"}</MathJax>
+            Since <MathJax>{"\\[ qq_1 = 1 \\pmod{p} \\]"}</MathJax>{" "}
+            <MathJax>{"\\[ pp_1 = 1 \\pmod{q} \\]"}</MathJax>{" "}
             <p className={classes.par}>
               The theorem also states that the solution is{" "}
               <span className={classes.italic}>unique</span> in modulo{" "}
-              <MathJax inline>{"$pq$"}</MathJax>.
+              <MathJax inline>{"$pq$"}</MathJax> .
             </p>
             <p className={classes.par}>
               Let <MathJax inline>{"$z$"}</MathJax> be a solution to the
