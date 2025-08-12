@@ -1,3 +1,74 @@
+.equationRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.equationBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-family: 'STIX Two Math', 'Cambria Math', 'Times New Roman', serif;
+  background: #fff;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  gap: 0.5rem;
+}
+
+.mathSymbol {
+  font-size: 1.25em;
+  font-family: 'STIX Two Math', 'Cambria Math', 'Times New Roman', serif;
+  color: #222;
+  font-weight: 500;
+}
+
+.numberInputMath {
+  width: 3.5rem;
+  height: 2.1rem;
+  font-size: 1.1rem;
+  font-family: 'STIX Two Math', 'Cambria Math', 'Times New Roman', serif;
+  background: #f8f8fa;
+  border: 1.5px solid #bbb;
+  border-radius: 0.3rem;
+  color: #222;
+  text-align: center;
+  margin: 0 0.1rem;
+  transition: border 0.2s;
+}
+.numberInputMath:focus {
+  border: 1.5px solid #0070f3;
+  outline: none;
+}
+
+.numberInputMod {
+  width: 3rem;
+  height: 1.8rem;
+  font-size: 1rem;
+  font-family: 'STIX Two Math', 'Cambria Math', 'Times New Roman', serif;
+  background: #f8f8fa;
+  border: 1.2px solid #bbb;
+  border-radius: 0.25rem;
+  color: #222;
+  text-align: center;
+  margin: 0 0.1rem;
+  vertical-align: middle;
+  transition: border 0.2s;
+}
+.numberInputMod:focus {
+  border: 1.2px solid #0070f3;
+  outline: none;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1.5rem;
+}
 .container {
     background-color: var(--light-gray);
     padding-inline: 1rem;
@@ -47,14 +118,59 @@
     align-items: center;
 }
 
+
 @media screen and (max-width: 576px) {
-    .numberInput {
-        width: 2.25rem;
-        height: 1.5rem;
-        font-size: 0.8rem;
-    }
-    .container {
-        width: 95%;
-        font-size: 1rem;
-    }
+  .container {
+    width: 99vw;
+    min-width: 0;
+    font-size: 1.04rem;
+    padding-inline: 0.38rem;
+    padding-block: 0.32rem;
+    border-radius: 0.36rem;
+  }
+  .contentContainer {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .textBoxItems {
+    flex-direction: row;
+    gap: 0.15rem;
+    width: auto;
+    justify-content: flex-start;
+  }
+  .numberInputMath {
+    width: 2.45rem;
+    height: 1.55rem;
+    font-size: 0.98rem;
+    min-width: 0;
+    margin: 0 0.07rem;
+  }
+  .numberInputMod {
+    width: 2.05rem;
+    height: 1.28rem;
+    font-size: 0.92rem;
+    min-width: 0;
+    margin: 0 0.07rem;
+  }
+  .large-gap {
+    gap: 0.2rem;
+  }
+  .small-gap {
+    gap: 0.12rem;
+  }
+  .optionsContainer {
+    margin-left: 0;
+    margin-top: 0.3rem;
+    justify-content: flex-start;
+    gap: 0.25rem;
+  }
+  .equationBox {
+    font-size: 1rem;
+    padding: 0.3rem 0.3rem;
+    gap: 0.2rem;
+  }
+  .mathSymbol {
+    font-size: 1em;
+  }
 }

@@ -21,10 +21,12 @@ export default function Navbar() {
 
   return (
     <nav className={classes.container}>
-      {/* Logo */}
-      <img src="logo.png" className={classes.logo} alt="logo" />
+      {/* Logo as a link to home */}
+      <Link href="/" className={classes.logoLink}>
+        <img src="logo.png" className={classes.logo} alt="logo" />
+      </Link>
 
-      {/* Navigation Links */}
+      {/* Navigation Links - absolutely centered */}
       <ul className={classes["nav-links"]}>
         <li className={classes["nav-link"]}>
           <Link href="/">Home</Link>
@@ -40,17 +42,17 @@ export default function Navbar() {
       {/* GitHub Buttons */}
       <div className={classes["github-buttons"]}>
         <GitHubButton
-          href="https://github.com/buttons"
+          href="https://github.com/jonaprojects"
           data-size="large"
-          aria-label="Follow @buttons on GitHub"
+          aria-label="Follow JonaProjects on GitHub"
         >
-          Follow @buttons
+          Follow @jonaprojects
         </GitHubButton>
         <GitHubButton
-          href="https://github.com/buttons/github-buttons"
+          href="https://github.com/jonaprojects/remainder_solver"
           data-icon="octicon-star"
           data-size="large"
-          aria-label="Star buttons/github-buttons on GitHub"
+          aria-label="Star jonaprojects/remainder-solver on GitHub"
         >
           Star
         </GitHubButton>
