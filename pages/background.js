@@ -140,11 +140,9 @@ export default function Background() {
                 tasked with finding the integer{" "}
                 <MathJax inline>{"$N$"}</MathJax> such that when divided by an
                 integer <MathJax inline>{"$a$"}</MathJax> , it leaves a
-                remainder
-                <MathJax inline>{"$r_1$"}</MathJax> , and when divided by an
-                integer <MathJax inline>{"$b$"}</MathJax> , it leaves a
-                remainder
-                <MathJax inline>{"$r_2$"}</MathJax> .
+                remainder <MathJax inline>{"$r_1$"}</MathJax> , and when divided
+                by an integer <MathJax inline>{"$b$"}</MathJax> , it leaves a
+                remainder <MathJax inline>{"$r_2$"}</MathJax> .
               </p>
               <p className={classes.par}>
                 We can formalize this in the following way:
@@ -296,6 +294,7 @@ export default function Background() {
             <H1 className={classes.h1}>Formal Theorem</H1>
             <div className="theorem-content">
               <p>
+                {" "}
                 Let <MathJax inline>{"$n_1, n_2, \\dots, n_k$"}</MathJax> be
                 pairwise coprime positive integers, meaning that{" "}
                 <MathJax inline>{"$\\gcd(n_i, n_j) = 1$"}</MathJax> for all{" "}
@@ -347,6 +346,7 @@ export default function Background() {
             </p>
             <H2>Lemma 1</H2>
             <p className={classes.par}>
+              {" "}
               Let <MathJax inline>{"$n$"}</MathJax> be a positive integer, and
               consider the ring of integers modulo{" "}
               <MathJax inline>{"$n$"}</MathJax> , denoted{" "}
@@ -357,6 +357,7 @@ export default function Background() {
             </p>
             <H2>Lemma 2</H2>
             <p className={classes.par}>
+              {" "}
               Let <MathJax inline>{"$p, q, n \\in \\mathbb{Z}$"}</MathJax> such
               that <MathJax inline>{"$\\gcd(p, q) = 1$"}</MathJax> . If{" "}
               <MathJax inline>{"$p \\mid n$"}</MathJax> and
@@ -617,21 +618,20 @@ export default function Background() {
               </p>
               <p className={classes.par}>
                 To formalize this mathematically, we want to represent a number
-                in
-                <MathJax inline>{"$\\mathbb{Z}_{pq}$"}</MathJax>
-                as two numbers in
-                <MathJax inline>{"$\\mathbb{Z}_{p}$"}</MathJax>
-                and <MathJax inline>{"$\\mathbb{Z}_{q}$"}</MathJax>, and vice
+                in <MathJax inline>{"$\\mathbb{Z}_{pq}$"}</MathJax> as two
+                numbers in <MathJax inline>{"$\\mathbb{Z}_{p}$"}</MathJax> and{" "}
+                <MathJax inline>{"$\\mathbb{Z}_{q}$"}</MathJax> , and vice
                 versa.
               </p>
               <p className={classes.par}>
                 In other words, we want to prove that there is a
                 <span className={classes.italic}>bijection</span>
-                between <MathJax inline>{"$\\mathbb{Z}_{pq}$"}</MathJax>
-                and{" "}
+                between <MathJax inline>
+                  {"$\\mathbb{Z}_{pq}$"}
+                </MathJax> and{" "}
                 <MathJax inline>
                   {"$\\mathbb{Z}_p \\times \\mathbb{Z}_q$"}
-                </MathJax>
+                </MathJax>{" "}
               </p>
               <p className={classes.par}>
                 That is, we want to find an invertible function{" "}
@@ -639,15 +639,15 @@ export default function Background() {
                   {
                     "$\\varphi: \\mathbb{Z}_{pq} \\to \\mathbb{Z}_q \\times \\mathbb{Z}_p$"
                   }
-                </MathJax>
+                </MathJax>{" "}
               </p>
               .
               <p className={classes.par}>
-                We will define <MathJax inline>{"$\\varphi$"}</MathJax>. Let{" "}
-                <MathJax inline>{"$x \\in \\mathbb{Z}_{pq} $"}</MathJax>, then
+                We will define <MathJax inline>{"$\\varphi$"}</MathJax> . Let{" "}
+                <MathJax inline>{"$x \\in \\mathbb{Z}_{pq} $"}</MathJax> , then
                 <MathJax inline>
-                  {"$\\varphi(x) = (x \\pmod{p}, x \\pmod{q} )$"}.
-                </MathJax>
+                  {"$\\varphi(x) = (x \\pmod{p}, x \\pmod{q} )$"}
+                </MathJax>{" "}
                 To prove that it is indeed a function we need show that for each
                 <MathJax inline>{"$x \\in \\mathbb{Z}_{pq}$"}</MathJax>, there
                 exists a unique value
@@ -662,12 +662,11 @@ export default function Background() {
               </p>
               <p className={classes.par}>
                 So we are left to prove that{" "}
-                <MathJax inline>{"$\\varphi(x)$"} </MathJax>
-                is unique. This is also quite straightforward, because both
-                <MathJax inline>{"$x \\pmod{p}$"}</MathJax>
-                and
-                <MathJax inline>{"$x \\pmod{q}$"}</MathJax>
-                are unique (we can easily show it via proof by contradiction).
+                <MathJax inline>{"$\\varphi(x)$"}</MathJax> is unique. This is
+                also quite straightforward, because both
+                <MathJax inline>{"$x \\pmod{p}$"}</MathJax> and{" "}
+                <MathJax inline>{"$x \\pmod{q}$"}</MathJax> are unique (we can
+                easily show it via proof by contradiction).
               </p>
               <p>
                 To show that <MathJax inline>{"$\\varphi$"} </MathJax> is
@@ -681,88 +680,91 @@ export default function Background() {
                 </MathJax>
               </p>
               <p className={classes.par}>
-                We will define
-                <MathJax inline>{"$\\varphi$"} </MathJax> as the result of the
-                Chinese Remainder Algorithm. The theorem ensures that such value
-                exists, and it is unique in modulo
-                <MathJax inline>{"$pq$"}</MathJax>, and thus{" "}
-                <MathJax inline>{"$\\varphi$"} </MathJax> is indeed a function.
+                We will define <MathJax inline>{"$\\varphi$"}</MathJax> as the
+                result of the Chinese Remainder Algorithm. The theorem ensures
+                that such value exists, and it is unique in modulo
+                <MathJax inline>{"$pq$"}</MathJax> , and thus{" "}
+                <MathJax inline>{"$\\varphi$"}</MathJax> is indeed a function.
               </p>
               <p className={classes.par}>
-                More explicitly, given
-                <MathJax inline>{"$(a, b)$"}</MathJax> such that
-                <MathJax inline>{"$a \\in \\mathbb{Z}_{p}$"}</MathJax>
-                and <MathJax inline>{"$b \\in \\mathbb{Z}_{q} $"}</MathJax>
-                We want to find a unique integer{" "}
-                <MathJax inline>{"$x \\in \\mathbb{Z}_{pq}$"}</MathJax>, such
+                More explicitly, given <MathJax inline>{"$(a, b)$"}</MathJax>{" "}
+                such that
+                <MathJax inline>{"$a \\in \\mathbb{Z}_{p}$"}</MathJax> and{" "}
+                <MathJax inline>{"$b \\in \\mathbb{Z}_{q} $"}</MathJax> We want
+                to find a unique integer{" "}
+                <MathJax inline>{"$x \\in \\mathbb{Z}_{pq}$"}</MathJax> , such
                 that
                 <MathJax>
                   {
                     "\\[ \\begin{cases} x \\equiv a \\pmod{p} \\\\ x \\equiv b \\pmod{q} \\end{cases} \\]"
                   }
                 </MathJax>
-                And as stated earlier, such <MathJax inline>{"$x$"}</MathJax>
-                is unique, and can obtained via the Chinese Remainder Theorem.
+                And as stated earlier, such <MathJax inline>{"$x$"}</MathJax> is
+                unique, and can obtained via the Chinese Remainder Theorem.
               </p>
               <p className={classes.par}>
                 To complete the proof, we need to show that{" "}
-                <MathJax inline>{"$\\varphi^{-1}$"}</MathJax>
-                is indeed the inverse of{" "}
-                <MathJax inline>{"$\\varphi$"}</MathJax>. Hence, we need to show
-                that for every{" "}
-                <MathJax inline>{"$x \\in \\mathbb{Z}_{pq}$"}</MathJax>
-                it holds that
-                <MathJax inline>{"$\\varphi^{-1}(\\varphi(x)) = x$"}</MathJax>
-                and that for every
+                <MathJax inline>{"$\\varphi^{-1}$"}</MathJax> is indeed the
+                inverse of <MathJax inline>{"$\\varphi$"}</MathJax> . Hence, we
+                need to show that for every{" "}
+                <MathJax inline>{"$x \\in \\mathbb{Z}_{pq}$"}</MathJax> it holds
+                that
+                <MathJax inline>
+                  {"$\\varphi^{-1}(\\varphi(x)) = x$"}
+                </MathJax>{" "}
+                and that for every{" "}
                 <MathJax inline>
                   {"$(a,b) \\in \\mathbb{Z}_{p} \\times \\mathbb{Z}_{q} $"}
-                </MathJax>
+                </MathJax>{" "}
                 it holds that
-                <MathJax inline>{"$\\varphi(\\varphi^{-1}(a,b)) = x$"}</MathJax>
+                <MathJax inline>
+                  {"$\\varphi(\\varphi^{-1}(a,b)) = x$"}
+                </MathJax>{" "}
               </p>
               .
               <p className={classes.par}>
-                Let <MathJax inline>{"$x \\in \\mathbb{Z}_{pq}$"}</MathJax>. We
+                Let <MathJax inline>{"$x \\in \\mathbb{Z}_{pq}$"}</MathJax> . We
                 showed earlier that there exist
-                <MathJax inline>{"$a_1 \\in \\mathbb{Z}_{p}$"}</MathJax>
-                and
-                <MathJax inline>{"$a_2 \\in \\mathbb{Z}_{q}$"}</MathJax>
-                such that{" "}
-                <MathJax inline>{"$\\varphi(x) =(a_1, a_2) $"}</MathJax>. It
-                also holds that{" "}
-                <MathJax inline>{"$\\varphi^{-1}(a_1, a_2) = x$"}</MathJax>
-                from the definition of
-                <MathJax inline>{"$\\varphi$"}</MathJax>
-                and the uniqueness that is ensured from the Chinese Remainder
-                Theorem. Hence, by function composition we get
-                <MathJax inline>{"$\\varphi^{-1}(\\varphi(x)) = x$"}</MathJax>
+                <MathJax inline>
+                  {"$a_1 \\in \\mathbb{Z}_{p}$"}
+                </MathJax> and{" "}
+                <MathJax inline>{"$a_2 \\in \\mathbb{Z}_{q}$"}</MathJax> such
+                that <MathJax inline>{"$\\varphi(x) =(a_1, a_2) $"}</MathJax> .
+                It also holds that{" "}
+                <MathJax inline>{"$\\varphi^{-1}(a_1, a_2) = x$"}</MathJax> from
+                the definition of
+                <MathJax inline>{"$\\varphi$"}</MathJax> and the uniqueness that
+                is ensured from the Chinese Remainder Theorem. Hence, by
+                function composition we get
+                <MathJax inline>
+                  {"$\\varphi^{-1}(\\varphi(x)) = x$"}
+                </MathJax>{" "}
                 as required.
               </p>
               <p className={classes.par}>
                 Let{" "}
                 <MathJax inline>
                   {"$(a, b) \\in \\mathbb{Z}_p \\times \\mathbb{Z}_{q}$"}
-                </MathJax>
+                </MathJax>{" "}
                 . We can also show in a similar manner that
                 <MathJax>
                   {"$$ \\varphi(\\varphi^{-1}(a, b)) = (a, b)$$"}
-                </MathJax>
+                </MathJax>{" "}
                 from the uniqueness that is ensured by the CRT, and the modulus
                 operation.
               </p>
               <h3>Theorem 1</h3>
               <p className={classes.par}>
-                Let <MathJax inline>{"$x, y \\in \\mathbb{Z}_{pq}$"}</MathJax>,
+                Let <MathJax inline>{"$x, y \\in \\mathbb{Z}_{pq}$"}</MathJax> ,
                 corresponding to
                 <MathJax inline>
                   {"$(a, b), (c, d) \\in \\mathbb{Z}_p \\times \\mathbb{Z}_q$"}
-                </MathJax>
+                </MathJax>{" "}
               </p>
               then <MathJax inline>{"$x+y$"}</MathJax> corresponds to
-              <MathJax inline>{"$(a+c, b+d)$"}</MathJax>, and
+              <MathJax inline>{"$(a+c, b+d)$"}</MathJax> , and
               <MathJax inline>{"$xy$"}</MathJax> corresponds to
-              <MathJax inline>{"$(ac, bd)$"}</MathJax>
-              <h3>Proof</h3>
+              <MathJax inline>{"$(ac, bd)$"}</MathJax> <h3>Proof</h3>
               <p className={classes.par}>
                 <MathJax>
                   {
@@ -789,10 +791,9 @@ export default function Background() {
                 <MathJax>
                   {"$$xy \\pmod{p} = ac \\pmod{p} $$"}
                   {"$$xy \\pmod{q} = bd \\pmod{q} $$"}
-                </MathJax>
+                </MathJax>{" "}
                 And thus <MathJax inline>{"$xy$"}</MathJax> can be represented
-                by
-                <MathJax inline>{"$(ac, bd)$"}</MathJax>.
+                by <MathJax inline>{"$(ac, bd)$"}</MathJax> .
               </p>
               <p className={classes.par}>
                 Now, we could utilize our result to handle arithmetic
@@ -802,9 +803,9 @@ export default function Background() {
               </p>
               <p className={classes.par}>
                 By the previous theorems, we could break it down to several,
-                easier calculations in
+                easier calculations in{" "}
                 <MathJax inline>{"$\\mathbb{Z}_5$"}</MathJax> and{" "}
-                <MathJax inline>{"$\\mathbb{Z}_7$"}</MathJax>
+                <MathJax inline>{"$\\mathbb{Z}_7$"}</MathJax>{" "}
               </p>
               <p className={classes.par}>
                 We know that
@@ -816,24 +817,23 @@ export default function Background() {
 \\end{cases}
 \\]`}
                 </MathJax>
-                so 22 can be represented as
+                so 22 can be represented as{" "}
                 <MathJax inline>
                   {"$(2, 1) \\in \\mathbb{Z}_p \\times \\mathbb{Z}_q$"}
-                </MathJax>
-                . In a similar fashion, we can also represent 18 as
-                <MathJax inline>{"$(3, 4)$"}</MathJax>
-                And from the theorem we proved earlier, the result of their
-                multiplication will be
+                </MathJax>{" "}
+                . In a similar fashion, we can also represent 18 as{" "}
+                <MathJax inline>{"$(3, 4)$"}</MathJax> And from the theorem we
+                proved earlier, the result of their multiplication will be
                 <MathJax>
                   {"$$(2 \\cdot 3, 1 \\cdot 4) \\equiv (1, 4)$$"}
-                </MathJax>
+                </MathJax>{" "}
               </p>
               <p className={classes.par}>
                 Now to obtain our result in{" "}
-                <MathJax inline>{"$\\mathbb{Z}_{pq}$"}</MathJax>, we simply
+                <MathJax inline>{"$\\mathbb{Z}_{pq}$"}</MathJax> , we simply
                 apply the CRT to get
-                <MathJax inline>{"$\\varphi^{-1}(1,4)$"}</MathJax>, which yields
-                the result <MathJax inline>{"$11 \\pmod{35}$"}</MathJax>
+                <MathJax inline>{"$\\varphi^{-1}(1,4)$"}</MathJax> , which
+                yields the result <MathJax inline>{"$11 \\pmod{35}$"}</MathJax>{" "}
                 One could of course verify the validity of these calculations by
                 himself, by multiplying the two numbers, and only then applying
                 the modulus operator.
@@ -856,19 +856,18 @@ export default function Background() {
 n = \\prod_{i=1}^{n} p_i^{k_i}
 \\]`}
                 </MathJax>
-                where <MathJax inline>{"$p_i$"}</MathJax>
-                are primes, and <MathJax inline>{"$k_i$"}</MathJax>
-                are the number of times these primes appear in the
-                factorization.
+                where <MathJax inline>{"$p_i$"}</MathJax> are primes, and{" "}
+                <MathJax inline>{"$k_i$"}</MathJax> are the number of times
+                these primes appear in the factorization.
               </p>
               <p className={classes.par}>
                 For each{" "}
                 <MathJax inline>{"$i, j \\in \\{1, \\dots, n\\}$"}</MathJax>{" "}
                 such that
-                <MathJax inline>{"$i \\ne j$"}</MathJax>, it holds that{" "}
+                <MathJax inline>{"$i \\ne j$"}</MathJax> , it holds that{" "}
                 <MathJax inline>
                   {"$\\gcd(p_i^{k_i} \\cdot p_j^{k_j}) = 1$"}
-                </MathJax>
+                </MathJax>{" "}
               </p>
               <p className={classes.par}>
                 In addition, We proved earlier for each
@@ -878,24 +877,22 @@ n = \\prod_{i=1}^{n} p_i^{k_i}
                   {`$$
     \\mathbb{Z}_{pq} \\cong \\mathbb{Z}_p \\times \\mathbb{Z}_q
   $$`}
-                </MathJax>
+                </MathJax>{" "}
                 It can be generalized to the following statement:
                 <MathJax>
                   {`$$
     \\mathbb{Z}_{p_1 p_2 \\dots p_n} \\cong \\mathbb{Z}_{p_1} \\times \\mathbb{Z}_{p_2} \\times \\dots \\times \\mathbb{Z}_{p_n}
   $$`}
-                </MathJax>
+                </MathJax>{" "}
                 when{" "}
                 <MathJax inline>
                   {"$p_1, p_2, \\dots p_n \\in \\mathbb{N}$"} are greater than 1
                   and are pairwise coprime.
-                </MathJax>
-                Therefore, in order to solve a calculation of the form
-                <MathJax>{"$$ a \\cdot b \\pmod{n} $$"}</MathJax>
-                where <MathJax inline>
-                  {"$ a, b, n \\in \\mathbb{N} $"}
                 </MathJax>{" "}
-                are greater than 1, it is always possible to factorize{" "}
+                Therefore, in order to solve a calculation of the form
+                <MathJax>{"$$ a \\cdot b \\pmod{n} $$"}</MathJax> where{" "}
+                <MathJax inline>{"$ a, b, n \\in \\mathbb{N} $"}</MathJax> are
+                greater than 1, it is always possible to factorize{" "}
                 <MathJax inline>{"$n$"}</MathJax> and do the calculations for
                 every <MathJax inline>{"$\\mathbb{Z}_{p_i}$"}</MathJax>{" "}
                 separately.
