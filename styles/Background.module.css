@@ -9,7 +9,13 @@
 }
 
 .contentContainer {
-    max-width: 768px;
+  max-width: min(768px, 100vw);
+  overflow-x: auto;
+}
+
+.contentContainer .MathJax_Display {
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .par {
@@ -17,6 +23,7 @@
     font-size: 18px;
     margin-block: 1rem;
 }
+
 
 
 
@@ -30,3 +37,5 @@
         padding-inline: 5%;
     }
 }
+
+

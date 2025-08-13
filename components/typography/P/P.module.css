@@ -1,0 +1,13 @@
+.par {
+  line-height: 1.6;
+  font-size: 18px;
+  margin-block: 1rem;
+  word-break: break-word;
+}
+
+@media screen and (max-width: 576px) {
+  .par {
+    font-size: 16px;
+    margin-block: 0.75rem;
+  }
+}

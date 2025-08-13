@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar/Navbar";
 import classes from "../styles/Background.module.css";
 import Header from "@/components/header/Header";
 import Quote from "@/components/quote/Quote";
+import P from "@/components/typography/P/P";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import ArticleImage from "@/components/images/ArticleImage";
 import H1 from "@/components/typography/Headers/H1";
@@ -62,13 +63,13 @@ export default function Background() {
           <div className={classes.contentContainer}>
             <Section>
               <H1>Abstract</H1>
-              <p className={classes.par}>
+              <P>
                 The Chinese Remainder Theorem (CRT) is a powerful tool for
                 solving systems of congruences equations. Namely, it suggests
                 that if we know the remainder that is obtained from dividing a
                 number by other numbers, we can uniquely determine this number
                 in a certain range.
-              </p>
+              </P>
               <p className={classes.par}>
                 We will study the origins of the theorem and examine its
                 historical development over time, as notable mathematicians from
@@ -119,7 +120,7 @@ export default function Background() {
                 cryptography to even modern radar systems, as we will see
                 shortly.
               </p>
-              <p className={classes.par}>
+              <P>
                 A more general algorithm for solving this problem came from the
                 ancient Indian mathematician Aryabhata in the 6th century.{" "}
                 <MathJax inline>{"$ x, y $"}</MathJax> be positive integers, and{" "}
@@ -127,7 +128,7 @@ export default function Background() {
                 <MathJax inline>{"$a$"}</MathJax> and{" "}
                 <MathJax inline>{"$b$"}</MathJax> are coprimes, that is - their
                 greatest common denominator is 1.
-              </p>
+              </P>
             </Section>
             <Section>
               <H2>Ancient India</H2>
@@ -547,7 +548,7 @@ export default function Background() {
             <p className={classes.par}>
               Then if <MathJax inline>{"$d \\mid b $"}</MathJax> then the
               equation has <MathJax inline>{"$d$"}</MathJax> solutions in{" "}
-              {"$\\mathbb{Z}_n$"}:
+              <MathJax inline>{"$\\mathbb{Z}_n$"}</MathJax> :
               <MathJax>{"$$ x_k = x_0 + \\frac{kn}{d} $$"}</MathJax>
               for every <MathJax inline>{"$0 \\le k \\le d-1$"}</MathJax>.
             </p>
