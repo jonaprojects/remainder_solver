@@ -11,11 +11,11 @@
 .contentContainer {
   max-width: min(768px, 100vw);
   overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .contentContainer .MathJax_Display {
   overflow-x: auto;
-  overflow-y: hidden;
 }
 
 .par {
@@ -36,6 +36,7 @@
     .container { 
         padding-inline: 5%;
     }
+    
 }
 
 
